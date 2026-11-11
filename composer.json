@@ -1,0 +1,19 @@
+{
+    "name": "etudiant/touche-pas-au-klaxon",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Pixelle",
+            "email": "pixelle2611@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpstan/phpstan": "^2.3",
+        "phpunit/phpunit": "^12.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
