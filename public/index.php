@@ -1,5 +1,13 @@
 <?php
+
 declare(strict_types=1);
-//chargement automatique des classes
+
+use App\Core\Database;
+
+// Chargement automatique des classes
 require_once __DIR__ . '/../vendor/autoload.php';
-echo 'Touche pas au Klaxon : le projet démarre.';
+
+$pdo = Database::getConnection();
+$nb = $pdo->query('SELECT COUNT(*) FROM agence')->fetchColumn();
+
+echo 'Connexion OK, agences en base : ' . $nb;
