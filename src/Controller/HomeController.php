@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Core\Database;
+use App\Model\Trajet;
+
 /**
  * Gère la page d'accueil.
  */
@@ -14,6 +17,12 @@ class HomeController
      */
     public function index(): void
     {
-        echo 'Accueil : le routeur fonctionne.';
+        $trajetModel = new Trajet(Database::getConnection());
+        $trajets = $trajetModel->findAvailable();
+
+        // Affichage provisoire, remplacé par une vue ensuite
+        echo '<pre>';
+        print_r($trajets);
+        echo '</pre>';
     }
 }
