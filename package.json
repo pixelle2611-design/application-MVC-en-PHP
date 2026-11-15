@@ -7,7 +7,8 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+   "sass": "sass scss/main.scss public/css/main.css --load-path=node_modules --quiet-deps",
+"sass:watch": "sass --watch scss/main.scss public/css/main.css --load-path=node_modules --quiet-deps"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,16 @@
+// ============================================================
+// Touche pas au klaxon : feuille de style principale
+// Palette imposée, branchée sur les variables de Bootstrap.
+// Les variables sont définies AVANT l'import de Bootstrap.
+// ============================================================
+
+// Palette du projet
+$light:     #f1f8fc;
+$primary:   #0074c7;
+$secondary: #00497c;
+$dark:      #384050;
+$danger:    #cd2c2e;
+$success:   #82b864;
+
+// Bootstrap
+@import "bootstrap/scss/bootstrap";
