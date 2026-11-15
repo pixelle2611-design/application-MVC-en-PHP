@@ -2,12 +2,15 @@
 
 declare(strict_types=1);
 
-use App\Core\Database;
+use App\Controller\HomeController;
+use App\Core\Router;
 
 // Chargement automatique des classes
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$pdo = Database::getConnection();
-$nb = $pdo->query('SELECT COUNT(*) FROM agence')->fetchColumn();
+$router = new Router();
 
-echo 'Connexion OK, agences en base : ' . $nb;
+// Routes de l'application
+$router->get('/', HomeController::class, 'index');
+
+$router->dispatch((string) $_SERVER['REQUEST_METHOD'], (string) $_SERVER['REQUEST_URI']);
